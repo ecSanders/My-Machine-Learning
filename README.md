@@ -6,3 +6,6 @@ IDEAS:
 - KNN
 - Decision Tree ID3
 - Build DataFrame
+
+
+Look at tutorials for building libraries
