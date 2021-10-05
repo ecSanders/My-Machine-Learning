@@ -10,3 +10,6 @@ a.out: Series.o DataFrame.o
 ##############################################################
 Series.o: Series.h Series.cpp main.cpp
 	g++ -c Series.cpp
+
+DataFrame.o: DataFrame.h DataFrame.cpp main.cpp
+	g++ -c DataFrame.cpp
