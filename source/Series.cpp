@@ -1,7 +1,8 @@
 /************************************************************************************************
 * Series source file with method definitions
 * @file Series.cpp
-* @author Dane Artis
+* @author Dane Artis @Dartis4
+* @author Matthew Gedris @mgedris19
 * @version 1.0 10/5/21
 ***********************************************************************************************/
 
@@ -14,8 +15,6 @@
 #include <vector>
 #include <map>
 #include <tuple>
-
-using namespace Series; // Our custom namespace scope
 
 /************************************************
  * The datatype of 'data'
@@ -51,9 +50,10 @@ std::tuple<int, int, int> shape()
  * instead of a column.
  * @returns the Transpose of 'Series'
  ***********************************************/
-// Series<T> T()
-// {
-// }
+template <class T>
+Series::Series<T> T()
+{
+}
 
 /************************************************
  * Whether the series contains elements or not
@@ -100,9 +100,10 @@ int ndim()
  * boolean values for all indices
  * @returns a Series of targeted data
  ***********************************************/
-// Series<T> loc()
-// {
-// }
+template <class T>
+Series::Series<T> loc()
+{
+}
 
 // ** Don't touch this yet **
 /************************************************
@@ -111,6 +112,7 @@ int ndim()
  * integer values
  * @returns a Series of targeted data
  ***********************************************/
-// Series<T> iloc()
-// {
-// }
+template <class T>
+Series::Series<T> iloc()
+{
+}

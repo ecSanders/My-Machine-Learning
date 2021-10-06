@@ -1,7 +1,8 @@
 /************************************************************************************************
-* Series header file with definitions and stubs
+* Series header file with declarations and stubs
 * @file Series.h
-* @author Dane Artis
+* @author Dane Artis @Dartis4
+* @author Matthew Gedris @mgedris19
 * @version 1.0 10/5/21
 ***********************************************************************************************/
 
@@ -62,9 +63,10 @@ namespace Series
 
     protected:
     private:
+        // Member variables
         std::string name;
         std::vector<T> data;
-        std::vector<T> index;
+        std::vector<std::string> index;
         std::string datatype;
     };
 }

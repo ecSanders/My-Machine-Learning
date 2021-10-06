@@ -1,36 +1,51 @@
+/************************************************************************************************
+* Source file for the decision tree class
+* @file DecisionTree.cpp
+* @author Erik Sanders @ecSanders
+* @version 1.1 10/5/21
+***********************************************************************************************/
 #include "DataFrame.h"
+#include "Series.h"
 
-class DecisionTree: private DataFrame
+// TODO This should probably be a header file
+
+namespace DecisionTree
 {
-private:
-    /* data */
-public:
-    DecisionTree(/* args */);
-    ~DecisionTree();
-
-
-    struct Node
+    /************************************************************************************************
+    * TODO Add class description and other documentation
+    ***********************************************************************************************/
+    template <class T>
+    class DecisionTree
     {
-        Series data;
-        struct Node* Right;
-        struct Node* Left;
+    private:
+        /* data */
+    public:
+        DecisionTree(/* args */);
+        ~DecisionTree();
 
+        struct Node
+        {
+            Series::Series<T> data;
+            struct Node *Right;
+            struct Node *Left;
 
-        Node(Series data){
-             this->data = data;
+            Node(Series::Series<T> data)
+            {
+                this->data = data;
 
-             Right = NULL;
-             Left = NULL;
-        }
+                Right = NULL;
+                Left = NULL;
+            }
+        };
     };
-    
-    
-};
 
-DecisionTree::DecisionTree(/* args */)
-{
-}
+    template <class T>
+    DecisionTree<T>::DecisionTree(/* args */)
+    {
+    }
 
-DecisionTree::~DecisionTree()
-{
+    template <class T>
+    DecisionTree<T>::~DecisionTree()
+    {
+    }
 }
