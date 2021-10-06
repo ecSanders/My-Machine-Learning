@@ -23,6 +23,8 @@
 std::string dtype()
 {
     // @TODO find and output the datatype
+    // I believe there is a way to return the 
+    // datatype of a value built directly in C++ 
 }
 
 /************************************************
@@ -91,6 +93,17 @@ std::string flags()
 int ndim()
 {
     return 1;
+}
+
+/************************************************
+ * Returns the count of all data grouped by 
+ * unique values.
+ * @returns a Series of counts
+ ***********************************************/
+template <class T>
+Series::Series<T> value_counts()
+{
+
 }
 
 // ** Don't touch this yet **

@@ -58,6 +58,7 @@ namespace Series
         std::string dtypes();
         std::string flags();
         int ndim();
+        Series<T> value_counts();
         Series<T> loc();
         Series<T> iloc();
 

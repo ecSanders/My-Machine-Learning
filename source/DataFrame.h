@@ -11,7 +11,8 @@
 namespace DataFrame
 {
     /************************************************************************************************
-    * A class to hold data in a container of many Series objects.
+    * A class to hold data in a container of many Series objects. The data may be heterogenous and 
+    * will be displayed in a tabular form.
     * 
     * @param data a vector of type Series
     * @param columns a vector of the name of each Series in the DataFrame, similar to index in 'Series'
