@@ -1,15 +1,11 @@
 ##############################################################
 # The main rule
 ##############################################################
-a.out: Series.o DataFrame.o
-	g++ -o a.out Series.o DataFrame.o
-	tar -cf dataframe.tar *.h *.cpp makefile
+a.out: Series.h DataFrame.h DecisionTree.h main.o
+	g++ -o a.out main.o
 
 ##############################################################
 # The individual components
 ##############################################################
-Series.o: Series.h Series.cpp main.cpp
-	g++ -c Series.cpp
-
-DataFrame.o: DataFrame.h DataFrame.cpp main.cpp
-	g++ -c DataFrame.cpp
+main.o: main.cpp Series.h DataFrame.h DecisionTree.h
+	g++ -c main.cpp
