@@ -3,7 +3,7 @@
 * @file Series.h
 * @author Dane Artis @Dartis4
 * @author Matthew Gedris @mgedris19
-* @version 1.0 10/5/21
+* @version 1.2 10/6/21
 ***********************************************************************************************/
 
 #ifndef SERIES_H
@@ -21,10 +21,6 @@
 
 namespace df
 {
-    namespace series
-    {
-
-
         /************************************************************************************************
         * @class Series
         * @brief A container for data
@@ -32,8 +28,6 @@ namespace df
         * A class that holds data organized in a column-like format. Series is a template class where
         * data can hold any numerical or categorical (string-like) data values. Index and data are
         * essentially pairwise arrays.
-        *
-        * @sa std::vector
         ***********************************************************************************************/
         template <class T>
         class Series {
@@ -75,6 +69,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(data[i]);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(data[0]).name();
             }
 
             /******************************************************************/
@@ -93,6 +89,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(data[i]);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(data[0]).name();
             }
 
             // data and index as arrays (int, T) with name
@@ -109,6 +107,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(data[i]);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(data[0]).name();
             }
 
             /******************************************************************/
@@ -127,6 +127,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(data[i]);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(data[0]).name();
             }
 
             // data and index as arrays (string, T) with name
@@ -143,6 +145,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(data[i]);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(data[0]).name();
             }
 
             /******************************************************************/
@@ -157,6 +161,9 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(it->second);
                 }
+                // set datatype to be the type of data
+                // TODO fix this 
+                //this->datatype = typeid(data[0]).name();
             }
 
             // data as a map of index:value pairs (int, T) with name
@@ -169,6 +176,7 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(it->second);
                 }
+                
             }
 
             /******************************************************************/
@@ -183,6 +191,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(it->second);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(data[0]).name();
             }
 
             // data as a map of index:value pairs (string, T) with name
@@ -195,6 +205,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(it->second);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(data[0]).name();
             }
 
             /******************************************************************/
@@ -209,6 +221,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(scalarValue);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(scalarValue).name();
             }
 
             // data as a scalar value and number of indeces provided (int) with name
@@ -221,6 +235,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(scalarValue);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(scalarValue).name();
             }
 
             /******************************************************************/
@@ -235,6 +251,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(scalarValue);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(scalarValue).name();
             }
 
             // data as a scalar value and indeces provided (int) with name
@@ -247,6 +265,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(scalarValue);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(scalarValue).name();
             }
 
             /******************************************************************/
@@ -261,6 +281,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(scalarValue);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(scalarValue).name();
             }
 
             // data as a scalar value and indeces provided (string) with name
@@ -273,6 +295,8 @@ namespace df
                     // push the data value into the data vector
                     this->data.push_back(scalarValue);
                 }
+                // set datatype to be the type of data
+                this->datatype = typeid(scalarValue).name();
             }
 
             /******************************************************************/
@@ -318,10 +342,6 @@ namespace df
         template <class T>
         std::string Series<T>::dtype()
         {
-            // @TODO find and output the datatype
-            // I believe there is a way to return the
-            // datatype of a value built directly in C++
-
             return this->datatype;
         }
 
@@ -433,6 +453,5 @@ namespace df
         Series<T> Series<T>::iloc()
         {
         }
-    }
 }
 #endif // SERIES_H
