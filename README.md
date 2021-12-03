@@ -9,4 +9,4 @@ A machine learning library.
 - Decision Tree
 
 
-Status: Incomplete
+**Status:** Incomplete
